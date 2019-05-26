@@ -24,7 +24,7 @@ html, body {
   display: flex;
 }
 
-.column-one {
+.first-column {
   background-color: var(--grey);
   padding: 0px 10px;
   height: 100vh;
@@ -189,7 +189,7 @@ html, body {
   padding-bottom: 20px;
 }
 
-.column-two {
+.second-column {
   background-color: var(--dark);
   padding: 30px 20px;
   height: 100vh;
@@ -199,7 +199,7 @@ html, body {
   scrollbar-width: none;
 }
 
-.column-two::-webkit-scrollbar {
+.second-column::-webkit-scrollbar {
     display: none;
 }
 
@@ -247,7 +247,7 @@ html, body {
    text-decoration: underline;
 }
 
- .column-three {
+ .third-column {
    background-color: var(--dark);
    padding: 30px 0px;
    height: 100vh;
@@ -259,7 +259,7 @@ html, body {
    margin-bottom: 2px;
  }
 
- .column-four {
+ .fourth-column {
    background-color: var(--dark);
    padding: 30px 20px;
    height: 100vh;
@@ -508,7 +508,7 @@ img {
     vertical-align: sub;
   }
 
-  .column-one {
+  .first-column {
     width: 120px;
   }
 
@@ -545,7 +545,7 @@ img {
     border-left: 1px solid var(--green);
   }
 
-  .column-two, .column-four {
+  .second-column, .fourth-column {
     padding: 20px 10px;
   }
 
@@ -564,7 +564,7 @@ img {
     font-size: 8px;
   }
 
-  .column-three {
+  .third-column {
     width: 55vw;
   }
 
@@ -598,7 +598,7 @@ img {
 
 @media only screen and (max-width: 560px) {
 
-  .column-three {
+  .third-column {
     width: 45vw;
   }
 
@@ -613,11 +613,11 @@ img {
     font-size: 6px;
   }
 
-  .column-three {
+  .third-column {
     padding-top: 20px;
   }
 
-  .column-two, .column-four {
+  .second-column, .fourth-column {
     padding-left: 5px;
   }
 
@@ -660,7 +660,7 @@ img {
     width: 100%
   }
 
-  .column-one {
+  .first-column {
     width: 60px;
     padding: 5px;
   }
