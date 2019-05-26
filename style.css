@@ -1,0 +1,695 @@
+html, body {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  width: 100%;
+}
+
+:root {
+  --blue: #72cff9;
+  --green: #6bef6b;
+  --orange: #eac967;
+  --pink: #ea67b3;
+  --purple: #a460e0;
+  --yellow: #e0ed55;
+  --greyblue: #606696;
+  --grey: #3f4154;
+  --dark: #1a1d21;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.column-one {
+  background-color: var(--grey);
+  padding: 0px 10px;
+  height: 100vh;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.upper-nav {
+  font-size: 0.7rem;
+  line-height: 3.5;
+}
+
+.upper-nav > ul {
+  padding: 0;
+}
+
+.upper-nav > ul > li  {
+  list-style: none;
+}
+
+.upper-nav > ul > li > a {
+  text-decoration: none;
+  color: inherit;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.icon-span {
+  vertical-align: middle;
+  border-radius: 1.5px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+
+.icon {
+  text-align: center;
+  color: black;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: -40%;
+  font-size: 0.8rem;
+}
+
+.upper-nav > ul > li:first-of-type {
+  color: var(--blue);
+}
+
+.blue-b {
+  background-color: var(--blue);
+}
+
+.upper-nav > ul > li:nth-of-type(2) {
+  color: var(--green);
+}
+
+.green-b {
+  background-color: var(--green);
+}
+
+.upper-nav > ul > li:nth-of-type(3) {
+  color: var(--orange);
+}
+
+.orange-b {
+  background-color: var(--orange);
+}
+
+.upper-nav > ul > li:nth-of-type(4), .pink {
+  color: var(--pink);
+}
+
+.pink-b {
+  background-color: var(--pink);
+}
+
+.upper-nav > ul > li:nth-of-type(5) {
+  color: var(--purple);
+}
+
+.purple-b {
+  background-color: var(--purple);
+}
+
+.upper-nav > ul > li:nth-of-type(6) {
+  color: white;
+}
+
+.white-b{
+  background-color: white;
+}
+
+.upper-nav > ul > li:nth-of-type(7), .yellow {
+  color: var(--yellow);
+}
+
+.yellow-b {
+  background-color: var(--yellow);
+}
+
+.lower-nav {
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.tw-ic {
+  color: white;
+  background-color: #3b5998;
+}
+
+.in-ic {
+  color: white;
+  background-color: #0077b5;
+}
+
+.git-ic {
+  color: white;
+  background-color: #4078c0;
+}
+
+.reddit-ic {
+  color: white;
+  background-color: #336699;
+}
+
+.social-media {
+  white-space: nowrap;
+}
+
+.sm-icon {
+  font-size: 12px;
+}
+
+.social-media > a {
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.social-media > a:last-of-type {
+  margin-right: 0;
+}
+
+
+.logo > a > img {
+  color: var(--greyblue);
+  padding-bottom: 20px;
+  height: 30px;
+  fill: var(--greyblue);
+}
+
+.column-head {
+  color: var(--blue);
+  font-size: 0.9rem;
+  font-weight: 200;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.column-two {
+  background-color: var(--dark);
+  padding: 30px 20px;
+  height: 100vh;
+  width: 25vw;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.column-two::-webkit-scrollbar {
+    display: none;
+}
+
+.newsbox {
+  border-left: 3px solid var(--grey);
+  list-style: none;
+  padding-left: 10px;
+  font-size: 0.8rem;
+  font-weight: 200;
+  margin-bottom: 40px;
+}
+
+.newsbox:hover {
+  border-left: 3px solid var(--green);
+}
+
+.newsbox-link {
+  text-decoration: none;
+}
+
+.news-head {
+  color: white;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.misc {
+  margin: 5px 5px 5px 0px;
+}
+
+.score {
+  font-weight: 100;
+}
+
+.lightblue {
+  color: var(--blue);
+}
+
+.author {
+  color: var(--yellow);
+}
+
+.comments-link {
+   color: var(--pink);
+   text-decoration: underline;
+}
+
+ .column-three {
+   background-color: var(--dark);
+   padding: 30px 0px;
+   height: 100vh;
+   width: 65vw;
+ }
+
+ .third-head {
+   padding-bottom: 0;
+   margin-bottom: 2px;
+ }
+
+ .column-four {
+   background-color: var(--dark);
+   padding: 30px 20px;
+   height: 100vh;
+   width: 25vw;
+   text-align: center;
+ }
+
+.search-results {
+  padding-top: 0;
+  margin-top: 0;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  max-height: 35vh;
+  border-bottom: 1px solid var(--grey);
+}
+
+.search-results::-webkit-scrollbar {
+    display: none;
+}
+
+.search-results ul {
+  padding: 0 5px;
+
+}
+
+img {
+  vertical-align: middle;
+}
+
+ .result {
+   list-style: none;
+   font-size: 0.8rem;
+   text-align: left;
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+
+ }
+
+.result > a {
+  text-decoration: none;
+  line-height: 3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.result > a:hover {
+  color: var(--yellow);
+}
+
+ .time {
+   color: #999;
+   display: inline-block;
+   float: right;
+   line-height: 3;
+ }
+
+.date-time {
+  color: var(--greyblue);
+  margin: 50px;
+  margin-bottom: 20px;
+  font-family: 'Arial';
+  text-align: center;
+}
+
+.current-time {
+  font-size: 7.5rem;
+  white-space: nowrap;
+}
+
+.current-date {
+  font-size: 1.4rem;
+  left: -2%;
+  position: relative;
+}
+
+.timeAmPM {
+  font-size: 2rem;
+  left: -6%;
+  position: relative;
+}
+
+.darkblue {
+  color: var(--greyblue);
+}
+
+.last-head {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.col-4 {
+  font-size: 0.8rem;
+  font-family: 'Arial';
+  text-transform: uppercase;
+  display: inline-block;
+  text-decoration: none;
+  background-color: inherit;
+  border: none;
+
+}
+
+.col-4:hover {
+  cursor: pointer;
+}
+
+.first {
+  position: relative;
+  right: 25%;
+  vertical-align: top;
+}
+
+.second {
+  position: relative;
+  left: 10%;
+  vertical-align: top;
+}
+
+.request:hover {
+  color: var(--green);
+}
+
+.switch {
+  font-size: 0.7rem;
+  margin-top: 0;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.switch:hover {
+  color: var(--yellow);
+}
+
+.fa-github, .gitlab-fa {
+  font-size: 3rem;
+  color: var(--dark);
+  top: 10%;
+  position: relative;
+}
+
+.github-icon, .gitlab-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-top: 30px;
+  background-color: var(--greyblue);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.github, .gitlab {
+  font-size: 0.75rem;
+  color: var(--greyblue);
+  font-family: 'Arial';
+}
+
+.git-text {
+  color: white;
+  margin-top: 0;
+}
+
+.git-title {
+  font-size: 0.8rem;
+  font-weight: 200;
+  margin-bottom: 5px;
+  margin-top: 0;
+}
+
+.git-subhead {
+  margin-bottom: 5px;
+  margin-top: 0;
+}
+
+.issues-list {
+  padding-left: 0;
+  text-align: left;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  height: 80vh;
+}
+
+.issues-list::-webkit-scrollbar {
+    display: none;
+}
+
+.message {
+  font-size: 0.8rem;
+  font-family: 'Arial';
+  text-align: center;
+  line-height: 1.5;
+}
+
+.message-text {
+  display: inline;
+}
+
+.message-icon {
+  font-size: 10px;
+  vertical-align: text-top;
+}
+
+.dismiss {
+  display: inline;
+  color: var(--orange);
+  font-size: 0.8rem;
+  font-family: 'Arial';
+  text-align: center;
+  font-weight: 600;
+}
+
+.dismiss-message:hover {
+  cursor: pointer;
+}
+
+.orange-bg {
+  background-color: var(--orange);
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: text-bottom;
+}
+
+
+@media only screen and (max-width: 900px) {
+
+  html {
+    font-size: 10px;
+  }
+
+  .icon-span {
+    height: 15px;
+    width: 15px;
+  }
+
+  .icon {
+    vertical-align: sub;
+  }
+
+  .column-one {
+    width: 120px;
+  }
+
+  .logo{
+    height: 40px;
+  }
+
+  .logo > a > img {
+    width: 60px;
+    height: auto;
+  }
+
+  .sm-icon {
+    font-size: 8px;
+    vertical-align: super;
+  }
+
+  .social-media > a {
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+  }
+
+  .social-media > a:last-of-type {
+    margin-right: 0;
+  }
+
+  .newsbox {
+    border-left: 1px solid var(--greyblue);
+    padding-left: 5px;
+  }
+
+  .newsbox:hover {
+    border-left: 1px solid var(--green);
+  }
+
+  .column-two, .column-four {
+    padding: 20px 10px;
+  }
+
+  .triangle {
+    height: 20px;
+  }
+
+  .lower-nav {
+    padding-bottom: 0;
+  }
+}
+
+@media only screen and (max-width: 670px) {
+
+  html {
+    font-size: 8px;
+  }
+
+  .column-three {
+    width: 55vw;
+  }
+
+  .icon {
+    font-size: 8px;
+  }
+
+  .icon-span {
+    height: 12px;
+    width: 12px;
+  }
+
+  .message-icon {
+    font-size: 8px;
+  }
+
+  .orange-bg {
+    width: 10px;
+    height: 10px;
+    vertical-align: bottom;
+  }
+
+  .fa-caret-up {
+    font-size: 10px;
+  }
+
+  .social-media {
+    padding-bottom: 10px;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+
+  .column-three {
+    width: 45vw;
+  }
+
+  img {
+    height: 10px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+
+  html {
+    font-size: 6px;
+  }
+
+  .column-three {
+    padding-top: 20px;
+  }
+
+  .column-two, .column-four {
+    padding-left: 5px;
+  }
+
+  .current-time {
+    margin-left: -20px;
+  }
+
+  .icon-span {
+    width: 10px;
+    height: 10px;
+  }
+
+  .icon {
+    vertical-align: bottom;
+    font-size: 6px;
+  }
+
+  .logo{
+    height: 20px;
+  }
+
+  .logo > a > img {
+    height: 10px;
+    width: auto;
+  }
+
+  .sm-icon {
+    font-size: 4px;
+    vertical-align: top;
+    position: relative;
+    top: 2px;
+  }
+
+  .social-media > a {
+    width: 7px;
+    height: 7px;
+  }
+
+  .lower-nav {
+    width: 100%
+  }
+
+  .column-one {
+    width: 60px;
+    padding: 5px;
+  }
+
+  .newsbox {
+    margin-bottom: 15px;
+  }
+
+  .message-icon {
+    font-size: 6px;
+    vertical-align: bottom;
+  }
+
+  .orange-bg {
+    width: 7px;
+    height: 7px;
+  }
+
+  .fa-caret-up {
+    font-size: 8px;
+  }
+
+  .triangle {
+    height: 10px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .date-time {
+    margin: 50px 30px 20px 30px;
+  }
+}

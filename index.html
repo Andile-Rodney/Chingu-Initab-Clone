@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <title>Initab Landing page</title>
+    <link href="style.css" type="text/css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <script src="moments.js"></script>
+  </head>
+  <body>
+    <div class="flex-container">
+      <div class="column-one">
+        <div class="upper-nav">
+          <ul>
+            <li><a href="#"><span class="icon-span blue-b"><i class="fas fa-wrench icon"></i></span> Settings</a></li>
+            <li><a href="#"><span class="icon-span green-b"><i class="fas fa-code icon"></i></span> Gists</a></li>
+            <li><a href="#"><span class="icon-span orange-b"><i class="fab fa-stack-overflow icon"></i></span> Stack Overflow</a></li>
+            <li><a href="#"><span class="icon-span pink-b"><i class="fas fa-chart-line icon"></i></span> Trending</a></li>
+            <li><a href="#"><span class="icon-span purple-b"><i class="fas fa-pencil-alt icon"></i></span> Scratchpad</a></li>
+            <li><a href="#"><span class="icon-span white-b"><i class="far fa-lightbulb icon"></i></span> Playground <i class="fas fa-lock"></i></a></li>
+            <li><a href="#"><span class="icon-span yellow-b"><i class="fas fa-question icon"></i></span> Help/Intro</a></li>
+          </ul>
+        </div>
+        <div class="lower-nav">
+          <div class="logo">
+            <a href="http://initab.com/" target="_blank"><img src="initab_logo.png" alt="Initab Logo" onmouseover="hover(this);" onmouseout="unhover(this);" ></a>
+          </div>
+          <div class="social-media">
+            <a class="tw-ic" href="https://twitter.com/dev_vegan" target="_blank"><i class="fab fa-twitter sm-icon"></i></a><a class="in-ic" href="#"><i class="fab fa-linkedin-in sm-icon"></i></a><a class="git-ic" href="https://github.com/MthunziNamba" target="_blank"><i class="fab fa-github-alt sm-icon"></i></a><a class="reddit-ic" href="https://www.reddit.com/" target="_blank"><i class="fab fa-reddit-alien sm-icon"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="column-two">
+        <h1 class="column-head lightblue"><i class="fab fa-reddit-alien"></i> Popular on R/JavaScript</h1>
+        <div id="news"><!-- JS Content -->
+        </div>
+      </div>
+      <div class="column-three">
+        <h1 class="column-head third-head lightblue"><i class="far fa-clock"></i> Relevant JavaScript History</h1>
+        <div class="search-results">
+          <ul id="search-results"><!-- JS Content -->
+          </ul>
+        </div>
+        <div class="date-time">
+          <div class="current-time" id="current-time"><!-- JS Content --></div>
+          <div class="current-date" id="current-date"><!-- JS Content --></div>
+        </div>
+        <div class="message" id="dismiss">
+          <span class="orange-bg"><i class="fas fa-question message-icon"></i></span>
+          <p class="darkblue message-text">Did you know that you can display CUSTOM LINKS to display in this section?</p><br/>
+          <p class="darkblue message-text">Open the SETTINGS panel and add the URLs of your favorite sites to the 'CUSTOM LINKS' textarea.</p>
+          <div class="dismiss-message "onclick="dismiss()">
+            <span class="orange-bg" ><i class="fas fa-times message-icon"></i></span>
+            <p class="orange dismiss">Got it! Don't show me this again.</p>
+          </div>
+        </div>
+      </div>
+      <div class="column-four">
+        <h1 class="column-head last-head lightblue" id="last-head"><i class="fab fa-github-alt"></i> Github issues history</h1>
+        <h1 class="column-head last-head lightblue" id="last-head2" style="display: none"><i class="fab fa-gitlab"></i> Gitlab issues history</h1>
+        <a class="darkblue switch" id="disp-github" href="#" onclick="changeGit()">switch to gitlab</a>
+        <a class="darkblue switch" id="disp-gitlab" href="#" onclick="changeGit2()" style="display: none">switch to github</a>
+        <div class="buttons">
+          <button class="yellow col-4 issue" id="btn-1" onclick="change()" >Issues</button>
+          <button class="pink col-4 request" id="btn-2" onclick="changeClass()">Pull Requests</button>
+        </div>
+        <div class="triangle">
+          <span class="fas fa-caret-up yellow first" id="first"></span>
+          <span class="fas fa-caret-up pink second" style="display: none" id="second"></span>
+        </div>
+        <div class="darkblue" id="github">
+          <ul class="issues-list" id="github-list"><!-- JS Content --></ul>
+        </div>
+        <div class="gitlab-container" id="gitlab" style="display: none">
+          <div class="gitlab-icon">
+            <i class="fab fa-gitlab gitlab-fa"></i>
+          </div>
+          <p class="gitlab" id="gitlab-merge">No recent GitLab issue activity in your browser history.</p>
+        </div>
+      </div>
+    </div>
+    <script>
+      function hover(element) {
+        element.setAttribute('src', 'initab_logo.png');
+        }
+
+      function unhover(element) {
+        element.setAttribute('src', 'initab_logo.png');
+        }
+    </script>
+    <script>
+      function dismiss() {
+        document.getElementById("dismiss").style.display = "none";
+      }
+    </script>
+    <script>
+
+      var mr = 'Merge Requests'
+      var pr = 'Pull Requests'
+    // switch to gitlab
+      function changeGit() {
+        var p = document.getElementById("gitlab");
+        var q = document.getElementById("github");
+        var r = document.getElementById("disp-github");
+        var s = document.getElementById("disp-gitlab");
+        var t = document.getElementById("last-head2");
+        var u = document.getElementById("last-head");
+        var a = document.getElementById("btn-2");
+
+        if (p.style.display === "none") {
+          p.style.display = "block",
+          q.style.display = "none",
+          r.style.display = "none",
+          s.style.display = "block",
+          t.style.display = "block",
+          u.style.display = "none";
+          document.getElementById("btn-2").innerHTML = mr;
+          } else {
+          p.style.display = "none",
+          q.style.display = "block";
+          document.getElementById("btn-2").innerHTML = pr;
+        }
+      };
+
+    // switch to github
+      function changeGit2() {
+        var p = document.getElementById("gitlab");
+        var q = document.getElementById("github");
+        var r = document.getElementById("disp-github");
+        var s = document.getElementById("disp-gitlab");
+        var t = document.getElementById("last-head2");
+        var u = document.getElementById("last-head");
+        var a = document.getElementById("btn-2");
+        var b = document.getElementById("btn-3");
+        if (q.style.display === "none") {
+          q.style.display = "block",
+          p.style.display = "none",
+          s.style.display = "none",
+          r.style.display = "block";
+          u.style.display = "block",
+          t.style.display = "none";
+          document.getElementById("btn-2").innerHTML = pr;
+          } else {
+          q.style.display = "none",
+          p.style.display = "block";
+        }
+      };
+
+  </script>
+  <script>
+    // Reddit Feed
+      let data = [
+        {
+        "link": "https://www.reddit.com/r/angularjs/comments/bb9q1r/all_you_need_to_know_about_promiseall_in/",
+        "title": "All you need to know about Promise.all in JavaScript - New Tutorial from JavaScript Works",
+        "author": "u/BenSE-JS",
+        "score": "50"
+      },
+        {
+        "link": "https://medium.com/@Panama_TJ/brave-short-interview-c02a5b59a877",
+        "title": "Q&A with Brendan Eich",
+        "author": "https://medium.com/@Panama_TJ",
+        
+      },
+      {
+        "link": "http://wellpaidgeek.com/2017/09/21/everything-you-need-to-know-about-the-this-variable-in-javascript/",
+        "title": "Everything You Need To Know About The ‘this’ Variable In JavaScript",
+        "author": "https://www.reddit.com/r/learnjavascript/",
+        "score": "29"
+      },
+      {
+        "link": "http://wellpaidgeek.com/2017/10/28/five-reasons-learn-javascript-this-year/",
+        "title": "5 Reasons You Need To Learn JavaScript This Year",
+        "author": "https://www.reddit.com/r/learnjavascript/",
+        "score": "52"
+      },
+      {
+        "link": "http://wellpaidgeek.com/2017/10/08/learning-javascript-by-building-your-own-version-of-jquery-part-1/",
+        "title": "Learning JavaScript By Building Your Own Version Of JQuery",
+        "author": "https://www.reddit.com/r/learnjavascript/",
+        "score": "72"
+      },
+      {
+        "link": "http://wellpaidgeek.com/2017/09/19/npm-packages-you-should-be-using-ramda/",
+        "title": "NPM Packages You Should Be Using: ramda",
+        "author": "https://www.reddit.com/r/learnjavascript",
+        "score": "1"
+      },
+      {
+      "link": "http://wellpaidgeek.com/2017/09/02/object-oriented-programming-in-javascript-part-1-the-basics/,
+      "title": "Object Oriented Programming In JavaScript",
+      "author": "https://www.reddit.com/r/learnjavascript",
+      "score": "204"
+      },
+      {
+      "link": "https://github.com/tc39/proposal-javascript-standard-library/issues/19#issuecomment-447987235",
+      "title": "Should design a new standard Javascript library?",
+      "author": "u/re_anon",
+      "score": "8"
+      },
+      {
+      "link": "https://krzysztofzuraw.com/blog/2017/callbacks-promises-in-js-for-newbies.html",
+      "title": "Callbacks & promises in JS for newbies",
+      "author": "u/KrzysztofŻurawblog",
+      "score": "29"
+      },
+      {
+      "link": "http://wellpaidgeek.com/2017/07/26/mastering-asynchronous-javascript-part-1-callback-hell/",
+      "title": "Mastering Asynchronous Javascript",
+      "author": "https://www.reddit.com/r/learnjavascript",
+      "score": "2"
+      },
+      {
+      "link": "http://wellpaidgeek.com/2017/08/02/javascript-var-const-let-whats-the-difference/",
+      "title": "Javascript: var, const, let, What’s The Difference?",
+      "author": "https://www.reddit.com/r/learnjavascript",
+      "score": "72"
+      },
+      {
+      "link": "https://blog.quadiontech.com/have-you-heard-about-ecmascript-6-find-out-what-is-new-in-javascript-es6-part-3-5d91866f059",
+      "title": "Have You Heard about ECMAScript 6? Find Out What’s New in JavaScript ES6",
+      "author": ">https://blog.quadiontech.com/@ygaitero",
+      "score": "36"
+      }
+    ];
+
+      let output = '';
+      for (var i = 0; i < data.length; i++) {
+        output += '<li class="newsbox">' + '<a class="newsbox-link" href="#">' + '<h2 class="news-head misc">' + data[i].title + '</h2>' +
+        '<p class="first-line lightblue misc">' + 'Posted by: ' + '<span class="author">' + data[i].author + '</span></p>' +
+        '<p class="score darkblue misc">' + 'Reddit Score: ' + data[i].score + '</p>' +
+        '<a class="comments-link" href="#">Link to Comments</a>' + '</a>' + '</li>'
+      }
+      document.getElementById('news').innerHTML = output;
+    </script>
+    <script>
+    // Relevant JavaScript History
+    let results = [
+        {
+        "result": "Promise.all in JavaScript",
+        "time": "30 minutes ago"
+      },
+      {
+        "result": "Q&A with Brendan Eich, Founder of JavaScript",
+        "time": "3 hours ago",
+      },
+      {
+        "result": "Everything You Need To Know About The ‘this’ Variable In JavaScript",
+        "time": "2 days ago"
+      },
+      {
+        "result": "5 Reasons You Need To Learn JavaScript This Year",
+        "time": "a month ago"
+      },
+      {
+        "result": "Learning JavaScript By Building Your Own Version Of JQuery",
+        "time": "two months ago",
+      },
+      {
+        "result": "NPM Packages You Should Be Using: ramda",
+        "time": "two months ago"
+      },
+      {
+        "result": "Object Oriented Programming In JavaScript",
+        "time": "two months ago"
+      },
+      {
+        "result": "Javascript: var, const, let, What’s The Difference?",
+        "time": "three months ago",
+      },
+      {
+        "result": "Have You Heard about ECMAScript 6? Find Out What’s New in JavaScript ES6.",
+        "time": "three months ago"
+      }
+    ];
+
+      let content = '';
+      for (var j = 0; j < results.length; j++) {
+        content += '<li class="result darkblue">' + '<img src="heart-16-166777.png">' + ' ' +
+        '<a class="darkblue" href="#">' + results[j].result + '</a>' +
+        '<span class="time">' +  results[j].time + '</span>' +
+        '</li>'
+      }
+      document.getElementById('search-results').innerHTML = content;
+    </script>
+    <script>
+    // Time
+      var time = moment().format('LT');
+
+      let l = time.indexOf('A')
+      if (time.indexOf('A') === -1) {
+        l = time.indexOf('P')
+      }
+      time = time.substring(0,l) + '<span class="timeAmPM">' + time.substring(l, l+2) + '</span>'
+      document.getElementById('current-time').innerHTML = time;
+
+      var date = moment().format('LL');
+      document.getElementById('current-date').innerHTML = date;
+
+    </script>
+    <script>
+    // Show issues
+      let issues = [
+        {
+          "title" : "Repo: Zeit/next.js",
+          "number" : "Issue #5354",
+          "text" : "Server side-only method to ensure server-only code is never sent to the browser"
+        },
+        {
+          "title" : "Repo: Zeit/next.js",
+          "number" : "Issue #4194",
+          "text" : "Context provided in _app.js can't be consumed in pages in SSR"
+        },
+        {
+          "title" : "Repo: Zeit/next.js",
+          "number" : "Issue #5354",
+          "text" : "Server side-only method to ensure server-only code is never sent to the browser"
+        },
+        {
+          "title" : "Repo: Zeit/next.js",
+          "number" : "Issue #4194",
+          "text" : "Context provided in _app.js can't be consumed in pages in SSR"
+        },
+        {
+          "title" : "Repo: Zeit/next.js",
+          "number" : "Issue #5354",
+          "text" : "Server side-only method to ensure server-only code is never sent to the browser"
+        },
+        {
+          "title" : "Repo: Zeit/next.js",
+          "number" : "Issue #4194",
+          "text" : "Context provided in _app.js can't be consumed in pages in SSR"
+        }
+      ];
+
+      let cont = '';
+      for (var m = 0; m < issues.length; m++) {
+        cont += '<li class="newsbox">' + '<a href="#" class="newsbox-link"><h2 class="darkblue git-title">' + issues[m].title + '</h2>' +
+        '<p class="yellow git-subhead">' + issues[m].number + '</p>' +
+        '<p class="git-text">' + issues[m].text + '</p></a>' +
+        '</li>'
+      }
+      document.getElementById('github-list').innerHTML = cont;
+
+      var newCont = '<ul class="issues-list" id="github-list">' + cont + '</ul>'
+
+    </script>
+    <script>
+
+    var pullRequests = '<div class="github-icon"><i class="fab fa-github"></i></div><p class="github" >No recent GitHub pull request activity in your browser history.</p>'
+    var prHistory = '<i class="fab fa-github-alt"></i> Github PR history</h1>'
+    var issueHistory = '<i class="fab fa-github-alt"></i> Github issues history</h1>'
+    var mergeRequest = 'No recent GitLab merge request activity in your browser history.'
+    var mergeHistory = '<i class="fab fa-gitlab"></i> Gitlab Merge Req. history</h1>'
+
+    // click on pull requests
+    function changeClass() {
+      var x = document.getElementById("second");
+      var y = document.getElementById("first");
+
+      if (x.style.display === "none") {
+        x.style.display = "block",
+        y.style.display = "none",
+        document.getElementById("github").innerHTML = pullRequests,
+        document.getElementById("last-head").innerHTML = prHistory
+      } else {
+        x.style.display = "none",
+        y.style.display = "block";
+      }
+    };
+
+    // click on issues
+    function change() {
+      var z = document.getElementById("first");
+      var v = document.getElementById("second");
+      if (z.style.display === "none") {
+        z.style.display = "block",
+        v.style.display = "none",
+        document.getElementById("github").innerHTML = newCont,
+        document.getElementById("last-head").innerHTML = issueHistory
+      } else {
+        z.style.display = "none",
+        v.style.display = "block";
+      }
+    };
+
+    </script>
+  </body>
+</html>
