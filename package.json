@@ -1,0 +1,23 @@
+{
+  "name": "initab-clone-master",
+  "version": "1.0.0",
+  "description": "Chingu Solo Project Tier-1 2019",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MthunziNamba/Initab-Clone.git"
+  },
+  "keywords": [
+    "Chingu",
+    "Heroku"
+  ],
+  "author": "rodney-andile",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MthunziNamba/Initab-Clone/issues"
+  },
+  "homepage": "https://github.com/MthunziNamba/Initab-Clone#readme"
+}
