@@ -295,7 +295,7 @@
       }
       time = time.substring(0,l) + '<span class="timeAmPM">' + time.substring(l, l+2) + '</span>'
       document.getElementById('current-time').innerHTML = time;
-
+     //Have to make it a 24 hour clock
       var date = moment().format('LL');
       document.getElementById('current-date').innerHTML = date;
 
