@@ -90,6 +90,7 @@
 
     function defaultParsingFlags() {
         // We need to deep clone this object.
+        // And thats exactly what we did.
         return {
             empty           : false,
             unusedTokens    : [],
